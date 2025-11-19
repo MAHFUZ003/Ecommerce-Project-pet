@@ -3,18 +3,26 @@ const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
 const pool = require('./db/db.js'); // CommonJS import
+const expressLayouts = require('express-ejs-layouts');
 
 dotenv.config();
 
 const app = express();
 app.set('view engine', 'ejs');
+app.use(expressLayouts);
+app.set("layout", "layout");
+
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Welcome to My Shop' });
+    res.render('pages/index', { 
+        title: '',
+        //user: null // You can pass user data here if you have authentication
+    });
 });
+
 
 pool.connect()
   .then(() => console.log(' Connected to PostgreSQL via pgAdmin'))
