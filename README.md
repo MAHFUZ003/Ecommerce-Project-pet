@@ -25,7 +25,4 @@
 4.  **Access the Application**
     Open your browser and visit: [http://localhost:3000](http://localhosçt:3000)
 
-## Database Configuration
-The application connects to a local PostgreSQL database named `ecommerce`.
-- **User**: `postgres`
-- **Password**: `admin`
+
