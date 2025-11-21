@@ -1,3 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header') %>
+</head>
 
-            <%- body %>
-    
+<body class="bg-gray-100">
+
+    <div class="page-container">
+
+        <!-- Navbar stays fixed at the top -->
+        <header class="navbar">
+            <%- include('partials/navbar') %>
+        </header>
+
+        <!-- CONTENT UNDER NAVBAR -->
+        <div class="content-wrapper pt-20"> 
+            <!-- Added pt-20 because navbar is fixed -->
+            <main class="main-content flex-1 p-4">
+                <%- body %>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <%- include('partials/footer') %>
+        </footer>
+
+    </div>
+
+    <% if (typeof customJS !== 'undefined') { %>
+        <script src="<%= customJS %>"></script>
+    <% } %>
+</body>
+</html>
