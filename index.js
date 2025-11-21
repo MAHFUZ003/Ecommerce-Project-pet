@@ -1,8 +1,8 @@
-// index.js
+
 const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
-const pool = require('./db/db.js'); // CommonJS import
+const pool = require('./db/db.js'); 
 const expressLayouts = require('express-ejs-layouts');
 
 dotenv.config();
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.render('pages/index', { 
-        title: '',
+       title: '',
         //user: null // You can pass user data here if you have authentication
     });
 });
