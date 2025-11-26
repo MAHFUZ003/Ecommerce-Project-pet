@@ -22,6 +22,24 @@ app.get('/', (req, res) => {
         //user: null // You can pass user data here if you have authentication
     });
 });
+app.get('/register/', (req, res) => {
+    res.render('pages/register', { 
+       title: '',
+    });
+});
+app.get('/login/', (req, res) => {
+    res.render('pages/login', { 
+       title: '',
+    });
+});
+
+
+app.use('api/v1/users'
+
+
+    
+)
+
 
 
 pool.connect()
