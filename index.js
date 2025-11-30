@@ -20,18 +20,22 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.render('pages/index', { 
-       title: '',
+
         //user: null // You can pass user data here if you have authentication
     });
 });
-app.get('/register/', (req, res) => {
-    res.render('pages/register', { 
-       title: '',
-    });
+
+app.get('/register', (req, res) => {
+  res.render('pages/register', {
+    layout: 'layout',
+    customJS: '/js/register.js',
+    // cache: true,
+  });
 });
+
 app.get('/login/', (req, res) => {
     res.render('pages/login', { 
-       title: '',
+      
     });
 });
 
@@ -39,7 +43,6 @@ app.get('/login/', (req, res) => {
 app.use('/api/v1/users',
   routers.usersRouter
 )
-
 
 
 pool.connect()
